@@ -1,4 +1,4 @@
-    <?php include 'connexion.php'; include 'header.php';
+    <?php include 'connexion.php'; include 'views/header.php';
 
     error_reporting(0);
     $id = $_GET['id'];
@@ -18,7 +18,7 @@
         $articles = [];
 
     while (($row = $sql ->fetch())) {
-        $articles = [
+        $article = [
             'titre' => utf8_encode($row['titre']),
             'contenu' => utf8_encode($row['contenu'])
         ];

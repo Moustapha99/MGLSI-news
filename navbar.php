@@ -3,9 +3,9 @@
     $categories = [];
 
     while (($row = $sql ->fetch())) {
-        $categories = [
+        $category = [
             'id' => utf8_encode($row['id']),
-            'libellé' => utf8_encode($row['libelle'])
+            'libelle' => utf8_encode($row['libelle'])
         ];
         $categories[] = $category;
     }
