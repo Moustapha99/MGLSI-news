@@ -1,4 +1,4 @@
-    <?php include 'connexion.php'; include 'views/header.php';
+    <?php require 'connexion.php'; require 'views/header.php';
 
     error_reporting(0);
     $id = $_GET['id'];
@@ -25,6 +25,5 @@
         $articles[] = $article;
     }
     require('views/homepage.php');
-    require('views/header.php');
     ?>
 

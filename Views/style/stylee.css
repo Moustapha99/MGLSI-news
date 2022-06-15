@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
 }
-header {
+#header {
     background-color: #83C5BE;
     font-family: Lucida Handwriting, sans-serif;
     padding: 10px;
@@ -37,19 +37,15 @@ header {
     cursor: pointer;
 }
 
-#article {
-    width: 100%;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 10px;
-    text-align: center;
-    margin: 0;
-}
 
 .article {
     background-color: #D4E9EE;
     padding: 10px;
     margin-top: 10px;
     color: #264653;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
 }
 
 .article:hover {

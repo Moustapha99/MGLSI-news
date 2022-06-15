@@ -1,12 +1,11 @@
 <html>
 <body>
-    <div id="article">
-        <? foreach($articles as $article) {?>
+    <?php require('header.php');
+        foreach($articles as $article) {?>
             <div class="article">
-                <h1>    <?php echo $article['titre'];?></h1>
-                <p> <?php echo $article['contenu'];?></p>
+                <h1>    <? echo $article['titre'];?></h1>
+                <p> <? echo $article['contenu'];?></p>
             </div>
         <? } ?>
-    </div>
 </body>
 </html>
