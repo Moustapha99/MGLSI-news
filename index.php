@@ -1,31 +1,30 @@
-
-<body>
-    
     <?php include 'connexion.php'; include 'header.php';
 
     error_reporting(0);
     $id = $_GET['id'];
 
-    if( isset($id) ) {
-        $sql = "SELECT titre, contenu FROM article where categorie = $id";
+    if( isset($id) ) { //permet de vérifier si l'id est bien défini dans l'url
+        $sql = $pdo -> query (
+            "SELECT titre, contenu FROM article where categorie = $id"
+        );
     }
     else {
-        $sql = "SELECT titre, contenu FROM article";
+        $sql = $pdo -> query (
+            "SELECT titre, contenu FROM article"
+        );
     }
 
-        $result = mysqli_query($mysqli, $sql);?>
+        // $result = mysqli_query($mysqli, $sql);
+        $articles = [];
 
-    <div id="article"><?php	
-        if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {?>
-            <div class="article">
-                <h1>    <?php echo utf8_encode($row['titre']);?></h1>
-                <p> <?php echo utf8_encode($row['contenu']);?></p>
-            </div>
-            <?php }
-            }
-            else {
-            echo "0 results";
-        }?></div>
-</body>
-</html>
+    while (($row = $sql ->fetch())) {
+        $articles = [
+            'titre' => utf8_encode($row['titre']),
+            'contenu' => utf8_encode($row['contenu'])
+        ];
+        $articles[] = $article;
+    }
+    require('views/homepage.php');
+    require('views/header.php');
+    ?>
+
